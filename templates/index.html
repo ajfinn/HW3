@@ -8,8 +8,30 @@
   </head>
 
   <body>
-    <h2> This is my loan calculator </h2>
+    {% extends 'base.html' %}
 
-    </body>
+    {% block body %}
+      <h2> This is my loan calculator </h2>
+      <form method="post">
+        <tr>
+          <td> Loan Amount: </td> <td> <input type="text" name="numOne" /> </td>
+        </tr>
+        <tr>
+          <td> Number of periodic payments:</td> <td> <input type="text" name="numTwo" /> </td>
+        </tr>
+        <tr>
+          <td> Interest Rate: </td> <td> <input type="text" name="numThree" /> </td>
+        </tr>
+
+      </table>
+        <br>
+      <input class="button" type="submit" formaction="/add" value="Calculate Payment!" />
+    </form>
+
+    <p> {{ display }} </p>
+    <div style="clear:both;"></div>
+    {% endblock %}
+
+      </body>
 
   </html>
